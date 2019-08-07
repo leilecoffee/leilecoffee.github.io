@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next pisces" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.9.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: ''
+    },
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="MySQL(安装)安装12345678910yum install -y wgetwget https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpmrpm -Uvh mysql80-community-release-el7-3.noarch.rpmyum repolist all | grep mysqlsudo yum">
+<meta name="keywords" content="MySQL,安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL一(安装)">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/MySQL一(安装)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MySQL(安装)安装12345678910yum install -y wgetwget https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpmrpm -Uvh mysql80-community-release-el7-3.noarch.rpmyum repolist all | grep mysqlsudo yum">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-07T07:06:27.773Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL一(安装)">
+<meta name="twitter:description" content="MySQL(安装)安装12345678910yum install -y wgetwget https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpmrpm -Uvh mysql80-community-release-el7-3.noarch.rpmyum repolist all | grep mysqlsudo yum">
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/MySQL一(安装)/">
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>MySQL一(安装) | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+    </ul>
+</nav>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/MySQL一(安装)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="leilecoffee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">MySQL一(安装)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-07 14:59:12 / 修改时间：15:06:27" itemprop="dateCreated datePublished" datetime="2019-08-07T14:59:12+08:00">2019-08-07</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          <br>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="MySQL-安装"><a href="#MySQL-安装" class="headerlink" title="MySQL(安装)"></a>MySQL(安装)</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget</span><br><span class="line"></span><br><span class="line">wget https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpm</span><br><span class="line"></span><br><span class="line">rpm -Uvh mysql80-community-release-el7-3.noarch.rpm</span><br><span class="line"></span><br><span class="line">yum repolist all | grep mysql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo yum install mysql-community-server</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start mysqld.service</span><br><span class="line"></span><br><span class="line">sudo systemctl status mysqld.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="密码配置"><a href="#密码配置" class="headerlink" title="密码配置"></a>密码配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo grep &apos;temporary password&apos; /var/log/mysqld.log</span><br><span class="line"></span><br><span class="line">2019-08-06T12:37:52.582192Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: ,igGyprsG0u4</span><br><span class="line"></span><br><span class="line">mysql -uroot -p</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;MyNewPass4!&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MySQL的 [validate_password](https://dev.mysql.com/doc/refman/8.0/en/validate-password.html) 插件默认安装。这将要求密码包含至少一个大写字母，一个小写字母，一个数字和一个特殊字符，并且密码总长度至少为8个字符。</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'username@'</span>host<span class="string">' IDENTIFIED BY '</span><span class="keyword">password</span><span class="string">';</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="查看加密方式"><a href="#查看加密方式" class="headerlink" title="查看加密方式"></a>查看加密方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br><span class="line">SELECT user,plugin from user;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改用户密码"><a href="#修改用户密码" class="headerlink" title="修改用户密码"></a>修改用户密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER user &apos;username&apos;@&apos;host&apos;  IDENTIFIED WITH  caching_sha2_password by &apos;password&apos;</span><br></pre></td></tr></table></figure>
+
+<p>caching_sha2_password：加密方式</p>
+<h2 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT privileges ON databasename.tablename TO &apos;username&apos;@&apos;host&apos;</span><br></pre></td></tr></table></figure>
+
+<h2 id="权限体系"><a href="#权限体系" class="headerlink" title="权限体系"></a>权限体系</h2><h3 id="全局层级"><a href="#全局层级" class="headerlink" title="全局层级"></a>全局层级</h3><p>全局权限适用于一个给定服务器中的所有数据库。存储在mysql.user表中。授予和撤销全局权限：GRANT ALL ON .和REVOKE ALL ON .。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES on *.*  to &apos;username&apos;@&apos;host&apos;;</span><br><span class="line"></span><br><span class="line">REVOKE ALL PRIVILEGES on *.*  from &apos;username&apos;@&apos;host&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据库层级"><a href="#数据库层级" class="headerlink" title="数据库层级"></a>数据库层级</h3><p>数据库权限适用于一个给定的数据库的所有目标。 存储在mysql.db表中。授予和撤销数据库权限：GRANT ALL ON db_name 和 REVOKE ALL ON db_name。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on mysql.* to &apos;dba&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="表层级"><a href="#表层级" class="headerlink" title="表层级"></a>表层级</h3><p>表权限适用于一个给定表的所有列。存储在mysql.tables_priv表中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on db_name.table_name to &apos;dba&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="列层级"><a href="#列层级" class="headerlink" title="列层级"></a>列层级</h3><p>列权限适用于一个给定表的单一列。存储在mysql.columns_priv表中。</p>
+<h3 id="子程序成绩"><a href="#子程序成绩" class="headerlink" title="子程序成绩"></a>子程序成绩</h3><p>存储在mysql.procs_priv表中。</p>
+<h2 id="权限划分规则"><a href="#权限划分规则" class="headerlink" title="权限划分规则"></a>权限划分规则</h2><p>数据库一般划分为线上库、测试库、开发库</p>
+<p>线上库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DBA: 所有权限</span><br><span class="line">应用程序：insert、delete、update、select、execute、events、jobs权限</span><br><span class="line">测试和开发：某些业务表的查询权限</span><br></pre></td></tr></table></figure>
+
+<p>测试库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DBA: 所有权限</span><br><span class="line">测试人员：insert、delete、update、select、execute、events、jobs权限</span><br><span class="line">开发人员：有查询权限</span><br></pre></td></tr></table></figure>
+
+<p>开发库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DBA: 所有权限</span><br><span class="line">测试人员：数据库表结构及数据的所有操作权限</span><br><span class="line">开发人员：数据库表结构及数据的所有操作权限</span><br></pre></td></tr></table></figure>
+
+<h2 id="撤销用户权限"><a href="#撤销用户权限" class="headerlink" title="撤销用户权限"></a>撤销用户权限</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REVOKE privileges ON *.* FROM &apos;username&apos;@&apos;host&apos;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP USER &apos;username&apos;@&apos;host&apos;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+        
+        <div class="post-tags">
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+            <a href="/tags/安装/" rel="tag"># 安装</a>
+          
+        </div>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+              <a href="/2019/08/05/Git学习二（Git分支）/" rel="next" title="Git学习二（Git分支）">
+                <i class="fa fa-chevron-left"></i> Git学习二（Git分支）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+              <a href="/2019/08/07/MySQL二(表)/" rel="prev" title="MySQL二(表)">
+                MySQL二(表) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="leilecoffee">
+  <p class="site-author-name" itemprop="name">leilecoffee</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:xwm1009@126.com" title="E-Mail &rarr; mailto:xwm1009@126.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL-安装"><span class="nav-number">1.</span> <span class="nav-text">MySQL(安装)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密码配置"><span class="nav-number">1.2.</span> <span class="nav-text">密码配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">1.3.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看加密方式"><span class="nav-number">1.4.</span> <span class="nav-text">查看加密方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改用户密码"><span class="nav-number">1.5.</span> <span class="nav-text">修改用户密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#授权"><span class="nav-number">1.6.</span> <span class="nav-text">授权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限体系"><span class="nav-number">1.7.</span> <span class="nav-text">权限体系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局层级"><span class="nav-number">1.7.1.</span> <span class="nav-text">全局层级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库层级"><span class="nav-number">1.7.2.</span> <span class="nav-text">数据库层级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表层级"><span class="nav-number">1.7.3.</span> <span class="nav-text">表层级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列层级"><span class="nav-number">1.7.4.</span> <span class="nav-text">列层级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子程序成绩"><span class="nav-number">1.7.5.</span> <span class="nav-text">子程序成绩</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限划分规则"><span class="nav-number">1.8.</span> <span class="nav-text">权限划分规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销用户权限"><span class="nav-number">1.9.</span> <span class="nav-text">撤销用户权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除用户"><span class="nav-number">1.10.</span> <span class="nav-text">删除用户</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">leilecoffee</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+    
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  <script src="/js/utils.js?v=7.3.0"></script>
+
+  
+  <script src="/js/affix.js?v=7.3.0"></script>
+  <script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script>
+<script src="/js/post-details.js?v=7.3.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.3.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
